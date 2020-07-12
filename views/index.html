@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Language Translator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!--Main heading -->
+  <div class="common">
+    <div class="jumbotron jumbotron-billboard">
+      <div class="img"></div>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <h1 style="background-color:DeepSkyBlue; text-align: center;">Language Translator</h1>
+              <p style="background-color:GhostWhite; text-align: center;">Welcome to the Language Translator. Where you can translate your  text in just a few easy clicks!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!--Text -->
+  <div class="col-sm-6" style="text-align: center;">
+    <h2 style="color:red;">Translate Text</h2>
+    <h3>Input</h3>
+    <p style="font-family: georgia">Enter or paste text from a passage</p>
+  </div>
+
+  <div class="col-sm-6" style= "text-align: center;">
+    <br></br>
+    <br></br>
+    <h3>Output</h3>
+    <p style="font-family: georgia">Copy output from this field</p>
+  </div>
+
+  <!--Two Textareas-->
+  <div class="row">
+    <div class="col-sm-6">
+      <form method = "POST" action = "/" style="text-align: center;">
+        <!-- dropdown list -->
+        <label class="custom-select">
+          <select name = "lang">
+            <option value="en" selected>English</option>
+            <option value="es">Spanish</option>
+            <option value="pt">Portuguese</option>
+            <option value="pa">Punjabi</option>
+            <option value="hi">Hindi</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="ja">Japanese</option>
+            <option value="vi">Vietnamese</option>
+            <option value="it">Italian</option>
+            <option value="ar">Arabic</option>
+          </select>
+        </label>
+        <!-- dropdown list ends here -->
+
+        <!-- Textarea 1 -->
+        <div class="form-group">
+          <label for="text"></label>
+          <textarea rows="15" cols="46" name="original" placeholder="Enter text here" style="font-family: monospace">{{name}}</textarea>
+        </div>
+        <!-- Textarea 1 ends here -->
+
+        <!-- Translate button -->
+        <div class="together">
+          <button class="btn success" type="submit" name="button" style="margin-left: 680px;">Translate<span class="glyphicon glyphicon-transfer"></span></button>
+        </div>
+        <!-- Translate ends here -->
+      </form>
+    </div>
+
+    <!-- Textarea 2 -->
+    <div class="col-sm-6">
+      <form method = "POST" action = "/" style="margin-top:5px; text-align:center;">
+        <div class="form-group">
+          <textarea id="myInput" rows="15" cols="46" name="translated" placeholder="Translation text" style="font-family: monospace; margin-top: 25px;">{{translation}}</textarea>
+        </div>
+      </form>
+    <!-- Textarea 2 ends here -->
+
+      <!-- Copy button -->
+    <div class="copy">
+      <button class="btn default" onclick="myFunction()" style="margin-left: 325px; margin-bottom: 15px;">Copy<span class="glyphicon glyphicon-copy"></span></button>
+      <script>
+      function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        document.execCommand("Copy");
+        alert("Text copied"); 
+      }
+      </script>
+      <!-- Copy button ends here -->
+    </div>
+  </div>
+</div>
+  <div class="jumbotron" style="background: linear-gradient(to bottom right, Silver, White)";>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
