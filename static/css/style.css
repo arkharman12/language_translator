@@ -41,7 +41,7 @@ label.custom-select {
     color: white;
 }
 
-.success:hover {
+button.success:hover {
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
